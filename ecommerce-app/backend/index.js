@@ -15,6 +15,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/ecommerce")
   app.use("/products", productRoutes);
   app.use("/order", orderRoutes);
 
+  app.get("/", (req, res) => {
+  res.send("Backend is working 🚀");
+});
+
   app.listen(5000, () => {
   console.log("Server running on port 5000");
 });

@@ -1,6 +1,6 @@
-const exports=require("express");
+const express=require("express");
 const Order=require("../models/Order");
-const router=express.Router;
+const router=express.Router();
 
 router.post("/",async(requestAnimationFrame,res)=>{
     const order=new Order(requestAnimationFrame.body);

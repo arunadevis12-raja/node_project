@@ -5,6 +5,8 @@ const router=express.Router();
 
 //Add products
 router.post("/",async(req,res)=>{
+        console.log("BODY:", req.body);   // 👈 ADD THIS
+
     const product=new Product(req.body);
     await product.save();
     res.json(product);
