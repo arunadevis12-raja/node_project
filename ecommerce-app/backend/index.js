@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const orderRoutes = require("./routes/orderRoutes");
 const productRoutes = require("./routes/productRoutes");
+const authRoutes=require("./routes/authRoutes");
 
 const app= express();
 app.use(cors());
@@ -14,6 +15,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/ecommerce")
 
   app.use("/products", productRoutes);
   app.use("/order", orderRoutes);
+  app.use("/auth",authRoutes);
 
   app.get("/", (req, res) => {
   res.send("Backend is working 🚀");
